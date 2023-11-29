@@ -1,0 +1,11 @@
+<div class="wrapper" *ngIf="vocabularyList$ | async as vocabularyList">
+  <div class="action-button">
+    <app-chip-filter (filterChange)="filterByType($event)"></app-chip-filter>
+  </div>
+  <div class="description-list">
+    <app-description-card
+      [vocabulary]="vocabulary"
+      *ngFor="let vocabulary of vocabularyList"
+    ></app-description-card>
+  </div>
+</div>
