@@ -1,0 +1,19 @@
+<div class="wrapper" *ngIf="vocabularyList$ | async as vocabularyList">
+  <div class="action-button">
+    <button mat-button (click)="accordion.openAll()">Expand All</button>
+    <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+  </div>
+  <div class="action-button">
+    <app-chip-filter (filterChange)="filterByType($event)"></app-chip-filter>
+  </div>
+  <mat-accordion multi>
+    <mat-expansion-panel *ngFor="let vocabulary of vocabularyList">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ vocabulary.term }}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p [innerHTML]="vocabulary.description | markdown"></p>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
