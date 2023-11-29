@@ -16,3 +16,9 @@ blockquote {
 li {
   list-style: square;
 }
+
+.description-card {
+  blockquote {
+    display: none;
+  }
+}
