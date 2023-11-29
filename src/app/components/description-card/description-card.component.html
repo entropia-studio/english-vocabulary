@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-header *ngIf="solution">
+    <mat-card-title> {{ solution }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p [innerHTML]="vocabulary.description | markdown"></p>
+    <div [formGroup]="form" class="form-field">
+      <mat-form-field>
+        <mat-label>Term</mat-label>
+        <input matInput type="text" formControlName="term" />
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="checkResponse()">
+        {{ checkLabel }}
+      </button>
+      <button mat-raised-button color="accent" (click)="showSolution()">
+        Solution
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>
