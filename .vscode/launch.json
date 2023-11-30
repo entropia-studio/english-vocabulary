@@ -7,14 +7,14 @@
       "request": "launch",
       "reAttach": true,
       "name": "Launch localhost Firefox",
-      "url": "http://localhost:4200/",
+      "url": "http://localhost:4300/",
       "webRoot": "${workspaceFolder}"
     },
     {
       "name": "Launch localhost Chrome",
       "type": "chrome",
       "request": "launch",
-      "url": "http://localhost:4200/"
+      "url": "http://localhost:4300/"
     }
   ]
 }
