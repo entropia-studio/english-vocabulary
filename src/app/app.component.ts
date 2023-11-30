@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AirtableService } from './core/services/airtable.service';
+import { IVocabulary } from './model/airtable.interface';
 import { Store } from './store';
 
 @Component({
@@ -8,13 +10,29 @@ import { Store } from './store';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'english-vocabulary';
+  vocabularyList: IVocabulary[] = [];
 
-  constructor(private airTableService: AirtableService, private store: Store) {}
+  constructor(
+    private airTableService: AirtableService,
+    private store: Store,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.airTableService.getVocabularyTable().subscribe((records) => {
-      this.store.set('vocabularyList', records);
+    this.airTableService.getVocabularyTable().subscribe((vocabularyList) => {
+      this.store.set('vocabularyList', vocabularyList);
+      this.vocabularyList = vocabularyList;
     });
+  }
+
+  randomTerms() {
+    const randomVocabularyList = this.airTableService.getRandomizedVocabulary(
+      this.vocabularyList
+    );
+    this.store.set('vocabularyList', randomVocabularyList);
+  }
+
+  navigateByUrl(url: string) {
+    this.router.navigateByUrl(url);
   }
 }

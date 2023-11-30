@@ -1,5 +1,16 @@
 <div class="wrapper">
-  <a routerLink="terms">Terms</a>
-  <a routerLink="descriptions">Descriptions</a>
+  <button mat-raised-button color="primary" (click)="navigateByUrl('terms')">
+    Terms
+  </button>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="navigateByUrl('descriptions')"
+  >
+    Descriptions
+  </button>
+  <button mat-raised-button color="primary" (click)="randomTerms()">
+    Random
+  </button>
 </div>
 <router-outlet></router-outlet>
