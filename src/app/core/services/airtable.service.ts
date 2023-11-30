@@ -29,9 +29,7 @@ export class AirtableService {
     );
   }
 
-  private getRandomizedVocabulary(
-    vocabularyList: IVocabulary[]
-  ): IVocabulary[] {
+  getRandomizedVocabulary(vocabularyList: IVocabulary[]): IVocabulary[] {
     const shuffledVocabularyList: IVocabulary[] = vocabularyList.slice();
     for (let i = shuffledVocabularyList.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
