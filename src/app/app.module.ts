@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MarkdownModule } from 'ngx-markdown';
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +13,7 @@ import { Store } from './store';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    MatButtonModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,

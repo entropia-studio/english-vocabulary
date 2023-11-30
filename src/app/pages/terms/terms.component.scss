@@ -1,5 +1,8 @@
 .wrapper {
   .action-button {
+    display: flex;
+    gap: 16px;
     padding-bottom: 20px;
+    justify-content: flex-end;
   }
 }

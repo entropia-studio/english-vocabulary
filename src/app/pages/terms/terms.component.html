@@ -1,7 +1,11 @@
 <div class="wrapper" *ngIf="vocabularyList$ | async as vocabularyList">
   <div class="action-button">
-    <button mat-button (click)="accordion.openAll()">Expand All</button>
-    <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+    <button mat-button color="primary" (click)="accordion.openAll()">
+      Expand terms
+    </button>
+    <button mat-button color="primary" (click)="accordion.closeAll()">
+      Collapse terms
+    </button>
   </div>
   <div class="action-button">
     <app-chip-filter (filterChange)="filterByType($event)"></app-chip-filter>
